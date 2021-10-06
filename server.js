@@ -1,9 +1,10 @@
-import express from 'express';
+import express, { json, urlencoded } from 'express';
 const app = express();
-import { json } from 'body-parser';
-
-app.use(json())
-
+// const bodyParser = require('body-parser');
+app.use(json()); //Used to parse JSON bodies
+app.use(urlencoded()); //Parse URL-encoded bodies
+// app.use(bodyParser.json())
+// app.use(express.static(__dirname + '/public'));
 const mockUserData=[
 	{name:'Mark'},
 	{name:'Jill'}

@@ -9,7 +9,7 @@ const mockUserData=[
 	{name:'Jill'}
 ]
 
-app.get('/users',function(req,res){
+app.get('/users/',function(req,res){
 	res.json({
 		success: true,
 		message: 'successfully got users. Nice!',
@@ -26,7 +26,7 @@ app.get('/users/:id',function(req,res){
 	})
 })
 
-app.post('/login',function(req,res){
+app.post('/login/',function(req,res){
 	// Typically passwords are encrypted using something like bcrypt before sending to database
 	const username=req.body.username;
 	const password=req.body.password;

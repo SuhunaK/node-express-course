@@ -1,8 +1,8 @@
-import express, { json, urlencoded } from 'express';
+const express = require('express');
 const app = express();
 // const bodyParser = require('body-parser');
-app.use(json()); //Used to parse JSON bodies
-app.use(urlencoded()); //Parse URL-encoded bodies
+app.use(express.json()); //Used to parse JSON bodies
+//app.use(express.urlencoded()); //Parse URL-encoded bodies
 // app.use(bodyParser.json())
 // app.use(express.static(__dirname + '/public'));
 const mockUserData=[
@@ -52,5 +52,5 @@ app.post('/login/',function(req,res){
 
 })
 
-app.listen(8000,function(){console.log('server is listening')})
+app.listen(80,function(){console.log('server is listening')})
 

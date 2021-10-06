@@ -1,15 +1,15 @@
-const express = require('express');
+import express from 'express';
 const app = express();
-const bodyParser = require('body-parser');
+import { json } from 'body-parser';
 
-app.use(bodyParser.json())
+app.use(json())
 
 const mockUserData=[
 	{name:'Mark'},
 	{name:'Jill'}
 ]
 
-app.get('/users/',function(req,res){
+app.get('/users',function(req,res){
 	res.json({
 		success: true,
 		message: 'successfully got users. Nice!',
